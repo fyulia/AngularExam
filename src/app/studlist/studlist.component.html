@@ -1,0 +1,39 @@
+<div class="container" style="margin-top: 10px;">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Фильтрация по номеру группы</span>
+        </div>
+        <input type="text" [(ngModel)]="userFilter.group" class="form-control" placeholder="Введите группу...">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon2">Фильтрация по направлению подготовки</span>
+        </div>
+        <input type="text" [(ngModel)]="userFilter.stud" class="form-control" placeholder="Введите направление...">
+      </div>
+
+      <button type="button" (click)="onSorting()" class="btn btn-primary">Сортировка по алфавиту</button>
+
+</div>
+
+<table class="table" style="margin-top: 10px; margin-left: 10px; margin-right: 10px;">
+    <thead>
+      <tr>
+        <th scope="col">Surname N.L.</th>
+        <th scope="col">Group</th>
+        <th scope="col">Direction</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students | filterBy:userFilter ">
+        <th scope="row">{{student.surname}} &#32; {{student.name[0]}}.{{student.middlename[0]}}</th>
+        <td>{{student.group}}</td>
+        <td>{{student.stud}}</td>
+        <td><button type="button" class="btn btn-info btn-sm" [routerLink]="['/editstud', student.id]">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- с фамилией, инициалами, номером группы, направлением подготовки -->

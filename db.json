@@ -1,0 +1,26 @@
+{
+  "students": [
+    {
+      "surname": "Бонд",
+      "name": "Джеймс",
+      "middlename": "Бонд",
+      "phone": "44646464",
+      "email": "mail@mail.uk",
+      "birth": "12.12.2020",
+      "group": "003",
+      "stud": "09.03.02",
+      "id": 3
+    },
+    {
+      "surname": "Лукашенко",
+      "name": "Александр",
+      "middlename": "Рыгорывыч",
+      "phone": "+375585454645",
+      "email": "mail@mail.by",
+      "birth": "02.09.2000",
+      "group": "002",
+      "stud": "09.03.04",
+      "id": 4
+    }
+  ]
+}

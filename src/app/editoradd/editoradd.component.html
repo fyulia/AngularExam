@@ -1,0 +1,45 @@
+<div class="container">
+<form [formGroup]='studForm' (ngSubmit)="(isNaN(id) ? onAddStud() : onEditStud(id))">
+    <h3>{{(!id) ? 'Добавление нового студента' : 'Редактирование студента'}}</h3>
+    
+    <h4>Фамилия</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="surname" placeholder="Фамилия">
+    </div>
+    <h4>Имя</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="name" placeholder="Имя">
+    </div>
+    <h4>Отчество</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="middlename" placeholder="Отчество">
+    </div>
+    <h4>Телефон</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="phone" placeholder="Телефон">
+    </div>
+    <h4>Email</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="email" placeholder="Email">
+    </div>
+    <h4>Дата рождения</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="birth" placeholder="Дата рождения">
+    </div>
+    <h4>Группа</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="group" placeholder="Группа">
+    </div>
+    <h4>Направление подготовки</h4>
+    <div class="col-12">
+    <input type="text" class="form-control" formControlName="stud" placeholder="Направление подготовки">
+    </div>
+    <br>
+    <div class="col-12">
+    <button class="btn btn-primary" [disabled] ="studForm.invalid">{{isNaN(id) ? 'Добавить' : 'Сохранить'}}</button>
+    <button *ngIf="!isNaN(id)" (click)="onDelete(id)" style="margin-left: 10px" class="btn btn-primary"> Удалить </button>
+    </div>
+    </form>
+   
+    <br>
+</div>
